@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
+import { Container, SortPopup, Title } from "@/components/shared";
+import { Categories } from "@/components/shared/categories";
 
 export default function Home() {
   return (
-    <h1>Home  <Button variant="outline">Корзина</Button></h1>
+    <Container className="mt-10 ">
+      <Title text="Все пиццы" size="lg" />
+      <Categories />
+      <SortPopup />
+
+    </Container>
   );
 }
