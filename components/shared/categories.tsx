@@ -3,6 +3,7 @@ import React from 'react';
 
 interface Props {
     className?: string;
+    items?: string[]
 }
 const cats = ['Пиццы', 'Комбо ',
     'Закуски ',
@@ -13,7 +14,7 @@ const cats = ['Пиццы', 'Комбо ',
 const activeIndex = 0;
 
 
-export const Categories: React.FC<Props> = ({ className }) => {
+export const Categories: React.FC<Props> = ({ className, items }) => {
     return <div className={cn('inline-flex gap-1 bg-gray-50 p-1 rounded-2xl', className)}>
         {
             cats.map((cat, index) => (

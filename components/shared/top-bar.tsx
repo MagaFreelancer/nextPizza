@@ -1,10 +1,18 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
+import { Container } from './container';
+import { Categories } from './categories';
+import { SortPopup } from './sort-popup';
 
 interface Props {
     className?: string;
+    categories?: string[];
 }
-
-export const Container: React.FC<React.PropsWithChildren<Props>> = ({ className, children }) => {
-    return <div className={cn('mx-auto max-w-[1280px]', className)}>{children}</div>;
+export const TopBar: React.FC<Props> = ({ categories, className }) => {
+    return <div className={cn('sticky top-0 bg-white py-5 shadow-lg shadow-black/5 z-10', className)}>
+        <Container className="flex items-center justify-between ">
+            <Categories items={categories} />
+            <SortPopup />
+        </Container>
+    </div>;
 };
